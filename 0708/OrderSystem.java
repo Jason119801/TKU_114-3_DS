@@ -57,11 +57,10 @@ public class OrderSystem {
             }
         }
 
-        // 輸出最後結果
         System.out.println("\n=== Receipt ===");
         System.out.println("Total items: " + totalItems);
         System.out.println("Total amount: " + totalAmount);
 
-        // scanner.close(); // 單檔執行可選擇性關閉
+        scanner.close();
     }
 }
