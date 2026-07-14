@@ -1,5 +1,5 @@
 {
-  "java.project.sourcePaths": ["0702", "0707", "0708", "0709", "week1_practice", "week2_practice"],
+  "java.project.sourcePaths": ["0702", "0707", "0708", "0709","0714", "0715", "0716", "0721", "week1_practice", "week2_practice"],
 
   "java.project.outputPath": "bin"
 }
