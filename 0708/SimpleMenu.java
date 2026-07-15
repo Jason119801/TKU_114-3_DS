@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SimpleMenu {
+public class SimpleMenu{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int option = -1;
