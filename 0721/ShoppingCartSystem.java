@@ -1,21 +1,62 @@
 import java.util.ArrayList;
+class CartItem {
+    private String code;
+    private String name;
+    private double price;
+    private int quantity;
+
+    public CartItem(String code, String name, double price, int quantity) {
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void addQuantity(int q) {
+        this.quantity += q;
+    }
+
+    public void setQuantity(int q) {
+        this.quantity = q;
+    }
+
+    @Override
+    public String toString() {
+        return code + " - " + name + " (單價: $" + price + ", 數量: " + quantity + ", 小計: $" + (price * quantity) + ")";
+    }
+}
 
 public class ShoppingCartSystem {
     private static ArrayList<CartItem> cart = new ArrayList<>();
-    
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         addItem(new CartItem("P1", "Apple", 20, 2));
         addItem(new CartItem("P2", "Banana", 15, 5));
-        addItem(new CartItem("P1", "Apple", 20, 3)); // 應合併數量
+        addItem(new CartItem("P1", "Apple", 20, 3));
         
         System.out.println("目前總額: $" + calculateTotal());
         
-        updateQuantity("P1", -5); // 應拒絕
+        updateQuantity("P1", -5); 
         updateQuantity("P1", 10);
         
         removeItem("P2");
         
-        System.out.println("--- 購物車清單 ---");
+        System.out.println("\n--- 購物車清單 ---");
         for(CartItem item : cart) {
             System.out.println(item);
         }

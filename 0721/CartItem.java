@@ -10,14 +10,24 @@ public class CartItem {
         this.price = price; 
         this.quantity = quantity;
     }
-
+    public Course(String code, String name) {
+        this.code = code;
+        this.name = name;
+        this.capacity = 30; // 可以給一個預設的容量
+        this.enrolled = 0;
+    }
     public String getCode() { return code; }
+    public String getName() { return name; } // 補上getName
     public double getPrice() { return price; }
     public int getQuantity() { return quantity; }
     
     public void addQuantity(int q) { this.quantity += q; }
+    
     public void setQuantity(int q) { 
-        if (q > 0) this.quantity = q; 
+        // 數量小於或等於 0 時不接受更新
+        if (q > 0) {
+            this.quantity = q; 
+        }
     }
     
     @Override
