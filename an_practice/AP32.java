@@ -1,4 +1,3 @@
-// 沿用 class MS
 class MS {
     int m, s;
     
@@ -55,32 +54,27 @@ class HMS extends MS {
 public class AP32 {
     
     static void testArray() {
-        // 1. 先印出 --- testArray ---
         System.out.println("--- testArray ---");
         
-        // 2. 造出局部變數並指向物件
         MS p1_ = new MS(5, 30);
         MS q1_ = new MS(5, 190);               // 內部 adjust() 會自動進位為 8m10s
         HMS p2 = new HMS(5, 50, 42);
-        MS p2_ = new HMS(5, 50, 42);           // 向上轉型 (Upcasting)
+        MS p2_ = new HMS(5, 50, 42); 
         HMS p3 = new HMS(2, 20, 15);
-        MS p3_ = new HMS(2, 20, 15);           // 向上轉型 (Upcasting)
+        MS p3_ = new HMS(2, 20, 15); 
         
-        // 印出各變數所指物件
+        // 印出
         System.out.println("p1_:" + p1_);
         System.out.println("q1_:" + q1_);
         System.out.println("p2:" + p2);
-        System.out.println("p2_:" + p2_);      // 展現多型，呼叫的是 HMS 的 toString()
+        System.out.println("p2_:" + p2_); 
         System.out.println("p3:" + p3);
-        System.out.println("p3_:" + p3_);      // 展現多型，呼叫的是 HMS 的 toString()
+        System.out.println("p3_:" + p3_);
         
-        // 印出一個空行以符合題目輸出格式
         System.out.println();
         
-        // 3. 另造 MS[] 型態的局部變數 a，陣列內容為 {p1_, q1_, p2_, p3_}
         MS[] a = {p1_, q1_, p2_, p3_};
         
-        // 用迴圈印出 a 所指的陣列的內容，各值以空格分開
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]);
             if (i < a.length - 1) {

@@ -36,7 +36,6 @@ class MS {
     }
 }
 
-// 沿用之前的 class HMS0
 class HMS0 extends MS {
     int h; 
     
@@ -49,10 +48,8 @@ class HMS0 extends MS {
 public class AP22 {
     
     static void testArray() {
-        // 1. 先印出 --- testArray ---
         System.out.println("--- testArray ---");
         
-        // 2. 宣告與實例化局部變數
         MS p1_ = new MS(5, 30);
         MS q1_ = new MS(5, 190);
         HMS0 p2 = new HMS0(5, 50, 42);
@@ -60,7 +57,7 @@ public class AP22 {
         HMS0 p3 = new HMS0(2, 20, 15);
         MS p3_ = new HMS0(2, 20, 15); // 向上轉型 (Upcasting)
         
-        // 印出變數所指物件 (物件之間換行)
+        // 印出
         System.out.println("p1_:" + p1_);
         System.out.println("q1_:" + q1_);
         System.out.println("p2:" + p2);
@@ -68,17 +65,13 @@ public class AP22 {
         System.out.println("p3:" + p3);
         System.out.println("p3_:" + p3_);
         
-        // 印出一個空行以符合題目輸出格式
         System.out.println();
         
-        // 3. 另造 MS[] 型態的局部變數 a
-        // 陣列可以存放子類別的物件，這展現了多型的特性
         MS[] a = {p1_, q1_, p2, p3};
         
-        // 用迴圈印出陣列內容，各值以空格分開
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]);
-            // 若不是最後一個元素，則印出空格分隔
+            // 若不是最後一個元素，則印出空格
             if (i < a.length - 1) {
                 System.out.print(" ");
             }

@@ -1,13 +1,11 @@
 class sMS {
     int m, s;
     
-    // 建構子負責設定this的欄位m及s
     sMS(int m0, int s0) {
         this.m = m0;
         this.s = s0;
     }
     
-    // 將p的s欄位加上ds
     static void addS(sMS p, int ds) {
         p.s += ds;
     }
